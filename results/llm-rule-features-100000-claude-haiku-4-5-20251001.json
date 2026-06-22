@@ -1,0 +1,220 @@
+[
+  {
+    "dataset": "CIC-IoT2023",
+    "seed": 42,
+    "round": 4,
+    "rule_id": "standardize-results:cic:seed42:round4:claude-haiku-4-5-20251001",
+    "feature_names": [
+      "flow_duration",
+      "Header_Length",
+      "Duration",
+      "Srate",
+      "ack_flag_number"
+    ],
+    "rules": [
+      {
+        "feature_name": "flow_duration",
+        "op": "<",
+        "value": 1,
+        "rule": "flow_duration < 1"
+      },
+      {
+        "feature_name": "Header_Length",
+        "op": "<",
+        "value": 1000,
+        "rule": "Header_Length < 1000"
+      },
+      {
+        "feature_name": "Duration",
+        "op": "<=",
+        "value": 70,
+        "rule": "Duration <= 70"
+      },
+      {
+        "feature_name": "Srate",
+        "op": ">",
+        "value": 50,
+        "rule": "Srate > 50"
+      },
+      {
+        "feature_name": "ack_flag_number",
+        "op": "==",
+        "value": 0,
+        "rule": "ack_flag_number == 0"
+      }
+    ]
+  },
+  {
+    "dataset": "WUSTL-IIoT",
+    "seed": 42,
+    "round": 1,
+    "rule_id": "standardize-results:wustl:seed42:round1:claude-haiku-4-5-20251001",
+    "feature_names": [
+      "SrcAddr",
+      "TotPkts",
+      "DstRate",
+      "DstPkts",
+      "DstLoad"
+    ],
+    "rules": [
+      {
+        "feature_name": "SrcAddr",
+        "op": "!=",
+        "value": "192.168.0.20",
+        "rule": "SrcAddr != 192.168.0.20"
+      },
+      {
+        "feature_name": "TotPkts",
+        "op": "==",
+        "value": 2,
+        "rule": "TotPkts == 2"
+      },
+      {
+        "feature_name": "DstRate",
+        "op": "==",
+        "value": 0,
+        "rule": "DstRate == 0"
+      },
+      {
+        "feature_name": "DstPkts",
+        "op": "==",
+        "value": 0,
+        "rule": "DstPkts == 0"
+      },
+      {
+        "feature_name": "DstLoad",
+        "op": "==",
+        "value": 0,
+        "rule": "DstLoad == 0"
+      }
+    ]
+  },
+  {
+    "dataset": "TON_IoT",
+    "seed": 42,
+    "round": 4,
+    "rule_id": "standardize-results:ton:seed42:round4:claude-haiku-4-5-20251001",
+    "feature_names": [
+      "dst_port",
+      "conn_state",
+      "duration",
+      "weird_name"
+    ],
+    "rules": [
+      {
+        "feature_name": "dst_port",
+        "op": "==",
+        "value": 4444,
+        "rule": "dst_port == 4444"
+      },
+      {
+        "feature_name": "conn_state",
+        "op": "==",
+        "value": "OTH",
+        "rule": "conn_state == OTH"
+      },
+      {
+        "feature_name": "duration",
+        "op": "==",
+        "value": 0.0,
+        "rule": "duration == 0.0"
+      },
+      {
+        "feature_name": "weird_name",
+        "op": "==",
+        "value": "-",
+        "rule": "weird_name == -"
+      }
+    ]
+  },
+  {
+    "dataset": "Bot-IoT",
+    "seed": 42,
+    "round": 2,
+    "rule_id": "standardize-results:bot:seed42:round2:claude-haiku-4-5-20251001",
+    "feature_names": [
+      "saddr",
+      "dport",
+      "stddev",
+      "N_IN_Conn_P_SrcIP",
+      "state_number"
+    ],
+    "rules": [
+      {
+        "feature_name": "saddr",
+        "op": "==",
+        "value": "192.168.100.150",
+        "rule": "saddr == 192.168.100.150"
+      },
+      {
+        "feature_name": "dport",
+        "op": "==",
+        "value": 80,
+        "rule": "dport == 80"
+      },
+      {
+        "feature_name": "stddev",
+        "op": ">",
+        "value": 0,
+        "rule": "stddev > 0"
+      },
+      {
+        "feature_name": "N_IN_Conn_P_SrcIP",
+        "op": ">",
+        "value": 20,
+        "rule": "N_IN_Conn_P_SrcIP > 20"
+      },
+      {
+        "feature_name": "state_number",
+        "op": "!=",
+        "value": 2,
+        "rule": "state_number != 2"
+      }
+    ]
+  },
+  {
+    "dataset": "UNSW-NB15",
+    "seed": 42,
+    "round": 3,
+    "rule_id": "standardize-results:unsw:seed42:round3:claude-haiku-4-5-20251001",
+    "feature_names": [
+      "proto",
+      "dur",
+      "state",
+      "dpkts",
+      "dttl"
+    ],
+    "rules": [
+      {
+        "feature_name": "proto",
+        "op": "!=",
+        "value": "tcp",
+        "rule": "proto != tcp"
+      },
+      {
+        "feature_name": "dur",
+        "op": "<",
+        "value": 0.001,
+        "rule": "dur < 0.001"
+      },
+      {
+        "feature_name": "state",
+        "op": "==",
+        "value": "INT",
+        "rule": "state == INT"
+      },
+      {
+        "feature_name": "dpkts",
+        "op": "==",
+        "value": 0,
+        "rule": "dpkts == 0"
+      },
+      {
+        "feature_name": "dttl",
+        "op": "==",
+        "value": 0,
+        "rule": "dttl == 0"
+      }
+    ]
+  }
+]

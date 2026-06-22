@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "source": "experiments/11-matched-inference-benchmark.py",
+  "majority_vote_policy": "attack_if_attack_votes_gt_half",
+  "policies": [
+    {
+      "dataset_key": "cic",
+      "display_name": "CIC-IoT2023",
+      "label_col": "label",
+      "normal_value": "normal",
+      "attack_value": "attack",
+      "majority_vote_policy": "attack_if_attack_votes_gt_half",
+      "rules": [
+        {"feature": "flow_duration", "op": "<", "value": 1, "value_type": "number"},
+        {"feature": "Header_Length", "op": "<", "value": 1000, "value_type": "number"},
+        {"feature": "Duration", "op": "<=", "value": 70, "value_type": "number"},
+        {"feature": "Srate", "op": ">", "value": 50, "value_type": "number"},
+        {"feature": "ack_flag_number", "op": "==", "value": 0, "value_type": "number"}
+      ],
+      "compound_rules": []
+    },
+    {
+      "dataset_key": "wustl",
+      "display_name": "WUSTL-IIoT",
+      "label_col": "Target",
+      "normal_value": 0,
+      "attack_value": 1,
+      "majority_vote_policy": "attack_if_attack_votes_gt_half",
+      "rules": [
+        {"feature": "SrcAddr", "op": "!=", "value": "192.168.0.20", "value_type": "string"},
+        {"feature": "TotPkts", "op": "==", "value": 2, "value_type": "number"},
+        {"feature": "DstRate", "op": "==", "value": 0, "value_type": "number"},
+        {"feature": "DstPkts", "op": "==", "value": 0, "value_type": "number"},
+        {"feature": "DstLoad", "op": "==", "value": 0, "value_type": "number"}
+      ],
+      "compound_rules": []
+    },
+    {
+      "dataset_key": "ton",
+      "display_name": "TON_IoT",
+      "label_col": "label",
+      "normal_value": 0,
+      "attack_value": 1,
+      "majority_vote_policy": "attack_if_attack_votes_gt_half",
+      "rules": [
+        {"feature": "dst_port", "op": "==", "value": 4444, "value_type": "number"},
+        {"feature": "conn_state", "op": "==", "value": "OTH", "value_type": "string"},
+        {"feature": "duration", "op": "==", "value": 0.0, "value_type": "number"},
+        {"feature": "weird_name", "op": "==", "value": "-", "value_type": "string"}
+      ],
+      "compound_rules": [
+        {
+          "name": "dst_bytes_zero_and_src_bytes_zero",
+          "logic": "all",
+          "conditions": [
+            {"feature": "dst_bytes", "op": "==", "value": 0, "value_type": "number"},
+            {"feature": "src_bytes", "op": "==", "value": 0, "value_type": "number"}
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_key": "bot",
+      "display_name": "Bot-IoT",
+      "label_col": "attack",
+      "normal_value": 0,
+      "attack_value": 1,
+      "majority_vote_policy": "attack_if_attack_votes_gt_half",
+      "rules": [
+        {"feature": "saddr", "op": "==", "value": "192.168.100.150", "value_type": "string"},
+        {"feature": "dport", "op": "==", "value": 80, "value_type": "number"},
+        {"feature": "stddev", "op": ">", "value": 0, "value_type": "number"},
+        {"feature": "N_IN_Conn_P_SrcIP", "op": ">", "value": 20, "value_type": "number"},
+        {"feature": "state_number", "op": "!=", "value": 2, "value_type": "number"}
+      ],
+      "compound_rules": []
+    },
+    {
+      "dataset_key": "unsw",
+      "display_name": "UNSW-NB15",
+      "label_col": "label",
+      "normal_value": 0,
+      "attack_value": 1,
+      "majority_vote_policy": "attack_if_attack_votes_gt_half",
+      "rules": [
+        {"feature": "proto", "op": "!=", "value": "tcp", "value_type": "string"},
+        {"feature": "dur", "op": "<", "value": 0.001, "value_type": "number"},
+        {"feature": "state", "op": "==", "value": "INT", "value_type": "string"},
+        {"feature": "dpkts", "op": "==", "value": 0, "value_type": "number"},
+        {"feature": "dttl", "op": "==", "value": 0, "value_type": "number"}
+      ],
+      "compound_rules": []
+    }
+  ]
+}

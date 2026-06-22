@@ -1,9 +1,0 @@
-```json
-{
-    "proto": "If proto is 'udp', then entry is an attack; if 'tcp', then entry is normal.",
-    "state": "If state is 'INT', then entry is an attack; if 'FIN', then entry is normal.",
-    "dpkts": "If dpkts is 0, then entry is an attack; if greater than 0, then entry is normal.",
-    "dbytes": "If dbytes is 0, then entry is an attack; if greater than 0, then entry is normal.",
-    "dttl": "If dttl is 0, then entry is an attack; if greater than 0, then entry is normal."
-}
-```

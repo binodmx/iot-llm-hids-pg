@@ -1,0 +1,4 @@
+# Minimal grid for quick validation (8 runs per dataset)
+provider: [anthropic, google]
+voting_mode: [weighted, or_gate]
+selection_metric: [macro_f1, attack_f1]

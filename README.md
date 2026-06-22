@@ -36,7 +36,7 @@ In this research we try to find how Large Language Models (LLMs) perform to impr
 
     > For ex:
     >
-    > Run `0-analysis.ipynb`, `1-preprocess.ipynb`, `2-evaluation-2-class-ml.ipynb`, `3-evaluation-2-class-vs.ipynb`, ... in `1-cic-iot` directory to evaluate `CICIoT2023` dataset.
+    > Run `00-dataset-analysis.ipynb`, `01-preprocessing.ipynb`, `02-baseline-ml.ipynb`, `03-multiclass-classification-llm.ipynb`, `04-zero-day-detection-claude.ipynb`, `05-anonymization-ablation-original.ipynb`, `06-binary-classification-llm-claude.ipynb`, ... in `1-cic-iot` directory to evaluate `CICIoT2023` dataset. Each dataset folder follows the same numbering, matching the order results appear in Section V of the paper; superseded/exploratory notebooks live under each folder's `archive/` subdirectory.
 
 ## Datasets
 

@@ -1,0 +1,5 @@
+# Bot-IoT has only 740 samples — small grid avoids overfitting the sweep itself
+provider: [anthropic, google]
+voting_mode: [weighted, or_gate]
+selection_metric: [macro_f1, attack_f1]
+k: [5, 7]

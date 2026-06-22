@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\caption{Multi-model policy-pipeline results, balanced held-out test split, seed 42.
+  Each cell is best-round macro F1 / attack F1; phenomenon-tag count in parentheses.}
+\label{tab:new_pipeline}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Claude Haiku 4.5} & \multicolumn{2}{c}{Gemini 2.5 Flash} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Dataset} & \textbf{Macro F1} & \textbf{Attack F1} & \textbf{Macro F1} & \textbf{Attack F1} \\
+\midrule
+CIC-IoT2023 & 0.9808 (5) & 0.9806 & 0.9766 (5) & 0.9761 \\
+WUSTL-IIoT & 0.9755 (5) & 0.9753 & 0.9908 (5) & 0.9909 \\
+TON_IoT & 0.7933 (5) & 0.7912 & 0.8247 (5) & 0.8424 \\
+Bot-IoT & 0.9187 (5) & 0.9231 & 0.9932 (5) & 0.9932 \\
+UNSW-NB15 & 0.7058 (4) & 0.7501 & 0.7040 (5) & 0.7492 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,7 @@
+# CIC-IoT hyperparameter sweep grid
+# Cartesian product expanded by sweep_policy.py
+provider: [anthropic, google]
+voting_mode: [weighted, or_gate]
+composite_alpha: [0.5, 0.6, 0.7]
+selection_metric: [macro_f1, attack_f1]
+# 2 x 2 x 3 x 2 = 24 runs per dataset
